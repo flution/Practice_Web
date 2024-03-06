@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <form method="post" action="http://localhost/method.php">
+        <input type="text" placeholder="아이디가 뭔가요?" name="ID" size="30"><p></p>
+        <input type="password" placeholder="비밀번호가 뭔가요?" name="PW" size="30" maxlength="12"><p></p>
+        
+        평소에 선호하는 언어의 종류를 고르시오.<br>
+        <input type="checkbox" name="cb1">C++
+        <input type="checkbox" name="cb2">C#
+        <input type="checkbox" name="cb3">Java
+        <input type="checkbox" name="cb4">Javascript
+        <p></p>
+        현재 당신의 PC를 포멧하시겠습니까?<p></p>
+        <input type="radio" name="myradio" checked>예
+        <input type="radio" name="myradio">아니오
+        <p></p>
+
+        <select>
+            <option value="">당신의 세대는?</option><p></p>
+            <option value="10">10대</option>
+            <option value="20">20대</option>
+            <option value="30">30대</option>
+            <option value="40">40대</option>
+            <option value="50">50대</option>
+            <option value="60">60대</option>
+        </select>
+        <p></p>
+
+        <input type="file" name="myname"><p></p>
+        <input type= "submit" value="전송"><p></p>
+        <input type="image" src="./img/starbucks.png" width="30">
+    </form>
+</body>
+</html>
