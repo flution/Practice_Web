@@ -1,0 +1,18 @@
+
+div {
+    color : #800000;
+    font-family: Dohyeon;
+}
+
+
+tstyle {
+    color: #00008b;
+    font-family: Dohyeon;
+    font-size: 50px;
+}
+
+
+@font-face {
+    font-family: 'Dohyeon';
+    src: url('./font/BMDOHYEON_ttf.ttf') format('truetype');
+}
