@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트</title>
+</head>
+<body>
+    <input type = "button" id = "myid" value = "버튼">
+    <input type = "text" onchange="alert('changed')">
+    <script>
+        var element = document.getElementById("myid");
+        element.addEventListener("click", function(){
+            alert("첫 번째 이벤트입니다.")
+        })
+        //익명함수를 사용하게 되었다.
+        var element = document.getElementById("myid");
+        addEventListener("click", function(){
+            alert("두 번째 이벤트입니다.")
+        })
+        element.addEventListener("click", function(){
+            alert("버튼 이벤트입니다.")
+        })
+            
+    </script>
+</body>
+</html>

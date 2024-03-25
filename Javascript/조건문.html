@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문</title>
+</head>
+<body>
+    <script>
+        // 조건문.
+        // let a = 90;
+        // let b = 3;
+
+        // if (a > 0)
+        // {
+        //     document.write("a는 0보다 크다" + "<br>");
+        // }
+        // else if ( a < 0 )
+        // {
+        //     document.write("a는 0보다 작다" + "<br>");
+        // }
+
+        // else if ( a == 0 ) 
+        // {
+        //     document.write("a는 0과 같다" + "<br>");
+        // }
+
+        // else
+        // {
+        //     document.write("잘못 입력하셨습니다." + "<br>")
+        // }
+
+        // if (a < b)
+        // {
+        //     document.write("a는 b보다 작다" + "<br>");
+        // }
+        // else
+        // {
+        //     document.write("b는 a보다 작다" + "<br>");
+        // }
+
+        //if~else문에 대한 2번째.
+        let score = prompt("입력");
+
+        //90 >= score <= 100 : A
+        //80~89 B
+        //70~79 C 
+        //60~69 D 
+        //0~59 F
+
+        if ( 90 <= score && score <= 100) 
+        {
+            document.write("당신의 학점은 A학점 입니다.")
+        }
+        else if ( 80 <= score && score <= 89) 
+        {
+            document.write("당신의 학점은 B학점 입니다.")
+        }
+        else if ( 70 <= score && score <= 79) 
+        {
+            document.write("당신의 학점은 C학점 입니다.")
+        }
+        else if ( 60 <= score && score <= 69) 
+        {
+            document.write("당신의 학점은 D학점 입니다.")
+        }
+        else if ( 0 <= score && score <= 59) 
+        {
+            document.write("당신의 학점은 F학점 입니다.")
+        }
+        else  
+        {
+            document.write("잘못 입력하셨습니다." + "<br>" + "다시 입력해주세요." )
+        }
+
+
+    </script>
+</body>
+</html>

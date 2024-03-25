@@ -1,0 +1,32 @@
+* {
+    text-align: center;
+}
+
+#header {
+    background-color: lightgray;
+    height: 100px;
+}
+
+#nav {
+    background-color: #339999;
+    height: 300px;
+    width: 200px;
+    color: white;
+    float: left;
+}
+
+#section {
+    width: 300px;
+    text-align: center;
+    padding: 10px;
+    float: left;
+}
+
+#footer {
+    background-color: #ffcc00;
+    height: 100px;
+    clear: both;
+}
+
+#header, #footer { line-height:  100px;}
+#nav, #ssection { line-height: 240px;}

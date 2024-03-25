@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //do while문과 while문은 순서만 바뀔뿐 {수행문}은 동일하니까 상관없다.
+        // var i = 0;
+        // do  {
+        //     document.write((i+1) + ". 자바스크립트" + "<br>");
+        //     i++
+        // } while ( i < 5 );
+        //for문도 대충 쓰면 됨
+        // for ( let i = 0; i < 5; i++ ) {
+        //     document.write((i+1) + ". 자바스크립트<br>");
+        // }
+
+        var arr = ['자바스크립트', 'C언어', '파이썬', 'node.js']
+
+        for ( let i = 0; i < arr.length; i++) {
+            document.write('<ul>' + arr[i] + "<br>");
+        }
+
+        document.write("<br><반복문 개행입니다.><br><br>");
+        arr.push("ASP.NET");
+        arr.push("C#.NET");
+
+        for ( let i = 0; i < arr.length; i++) {
+            document.write('<li>' + arr[i] + "<br>");
+        }
+
+        var list = document.querySelectorAll("li");
+        for(var i = 0; i < list.length; i++) 
+        {
+            document.write(list[i].innerText + "<br>");
+            console.log(list[i].innerText);
+        }
+
+    </script>
+</body>
+</html>

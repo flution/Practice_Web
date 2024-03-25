@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var newWin;
+        function newOpen(){
+            newWin = window.open('Date.html', '', 'width = 600, height = 300');
+        }
+        function winClose(){
+            newWin.close();
+        }
+        
+    </script>
+    <button onclick="newOpen()">새 윈도우 열기</button>
+    <button onclick="winClose()">윈도우 닫기</button>"
+</body>
+</html>

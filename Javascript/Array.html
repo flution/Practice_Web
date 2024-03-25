@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열</title>
+</head>
+<body>
+    <script>
+        var month = new Array(1,2,3,4,5,6,7,8,9,10,11,12);
+        
+        for( let i = 0; i < month.length; i++) 
+        {
+        document.write(month[i] + '월' + '<br>');
+        }
+
+        document.write(month.length + '<br>');
+
+        var major = new Array('컴공과', '전자공학', '제어계측');
+        var minor = new Array('국문학', '영문학', '경영학')
+
+        //문자열일땐 ㄱ겹쳐지지 ㅇ ㅏㄶ음.
+        var total = major.concat(minor);
+
+        document.write('전공/부전공 : ' + total + '<br>');
+
+        var rev = month.reverse();
+
+        for(var i = 0; i < rev.length; i++) 
+        {
+            document.write(rev[i] + '월' + '<br>');
+        }
+
+        var num = new Array(12,2,7,5,100,25,63);
+
+        var sortNum = num.sort(function(left, right){
+            return left - right;
+        })
+        document.write(sortNum = '<br>');
+
+        num[0] = 50;
+        document.write(sortNum + '<br>');
+
+        sortNum.push(500);
+        document.write(sortNum + '<br>')
+
+    </script>
+</body>
+</html>
