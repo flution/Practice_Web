@@ -5,18 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body onload = "myLoad()" onblur="myBlur()">
     <script>
-        var newWin;
-        function newOpen(){
-            newWin = window.open('Date.html', '', 'width = 600, height = 300');
+        // var newWin;
+        // function newOpen(){
+        //     newWin = window.open('Date.html', '', 'width = 600, height = 300');
+        // }
+        // function winClose(){
+        //     newWin.close();
+        // }
+
+        function myLoad() {
+            alert('문서를 로드했습니다.');
         }
-        function winClose(){
-            newWin.close();
+
+        function myblur() {
+            alert('포커스를 잃었습니다.');
         }
         
     </script>
     <button onclick="newOpen()">새 윈도우 열기</button>
-    <button onclick="winClose()">윈도우 닫기</button>"
+    <button onclick="winClose()">윈도우 닫기</button>
 </body>
 </html>
