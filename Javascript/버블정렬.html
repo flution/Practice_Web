@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>버블정렬</title>
+</head>
+<body>
+    <script>
+    function bubbleSort(inputStr) {
+    var len = inputStr.length;
+    var arr = inputStr.split("");	
+    for (var i = 0; i < len - 1; i++) {
+        for (var j = 0; j < len - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) { 
+                var temp = arr[j]; arr[j] = arr[j + 1]; arr[j + 1] = temp;
+            }
+        } 
+    } 
+    return arr.join("");
+}
+
+var str = "javascript";
+document.write("정렬 되기 전: " + str + "<br>");
+str = bubbleSort(str); 
+document.write("정렬 된 후: " + str);
+    </script>
+</body>
+</html>

@@ -12,6 +12,14 @@
             document.write("현재까지 방문 횟수는 " + urlCount + "군데 입니다." +"<p>" );
         }
 
+        function goback() {
+            history .go(-2);
+        }
+
+        function goforward() {
+            history.forward();
+        }
+        
     </script>
     <button onclick="historyCount()">방문 횟수</button>
 </body>

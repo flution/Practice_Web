@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네비게이터</title>
+</head>
+<body>
+    <script>
+        // document.write("appCodeName : " + navigator.appCodeName + "<br>");
+        // document.write("appName : " + navigator.appName + "<br>");
+        // document.write("appVersion : " + navigator.appVersion + "<br>");
+        // document.write("platform : " + navigator.platform + "<br>");
+        // document.write("userAgent : " + navigator.userAgent + "<br>");
+
+        //이렇게 하면 for in 문을 통해서 navigator의 모든 name을 호출 가능.
+        // for(var name in navigator)
+        // {
+        //     document.write(name + " : " + navigator[name] + "<br>");
+        // }
+
+        var agent = navigator.userAgent.toLowerCase();
+        if(agent.indexOf("chrome")!= -1){
+            document.write("<h1>" + "크롬 브라우저입니다." + "</h1>")
+        } else if(agent.indexOf("firefox")!= -1) {
+            document.write("<h1>" + "파이어폭스 브라우저입니다." + "</h1>")
+        } else {
+            document.write("<h1>" + "기타 브라우저입니다." + "</h1>")
+        }
+    </script>
+</body>
+</html>
