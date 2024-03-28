@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>도큐먼트객체</title>
+</head>
+<body>
+    <script>
+
+
+    function changeTitle() {
+        var docValue = document.getElementById("titleValue");
+        document.title = docValue.value;
+
+    }
+    function printInfo() {
+        var docInfo = 
+        "문서 제목 : " + document.title + "\r\n" + 
+        "현재URL : " + document.URL + "\r\n"
+        "문서 수정일 : " + document.lastModified + "\r\n"
+        alert(docInfo);
+    }
+
+    </script>
+    <h1>문서 타이틀 변경 및 문서 정보 출력하기.</h1>
+    타이틀 입력 : <input type="text" id="titleValue" value="새문서"> <p>
+    <button onclick="changeTitle()">타이틀 변경하기</button>
+    <button onclick="printInfo()">문서 정보 출력하기</button>
+    </p>
+</body>
+</html>
