@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>애니메이션</title>
+    <style>
+        div {
+            margin: 3px;
+            width:  80px;
+            height: 80px;
+            background-color: #f00;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+    <input type = "button" value="fadeOut" id="fadeOut">
+    <input type = "button" value="fade in" id="fadeIn">
+    <input type = "button" value="hide" id="hide">
+    <input type = "button" value="show" id="show">
+    <input type = "button" value="slide down" id="slideDown">
+    <input type = "button" value="slide up" id="slideUp">
+    <input type = "button" value="mix" id="mix">
+    <div id ="target">
+        Target
+    </div>
+    <script>
+        $('input[type = "button"]').click(function(e){
+            var $this = $(e.target);
+            switch($this.attr('id')){
+                case 'fadeOut':
+                    $('#target').fadeOut('slow');
+                    break;
+                case 'fadeIn':
+                    $('#target').fadeIn('slow');
+                    break;
+                case 'hide':
+                    $('#target').hide();
+                    break;
+                case 'show':
+                    $('#target').show();
+                    break;
+                case 'slideDown':
+                    $('#target').slideDown('slow');
+                    break;
+                case 'slideUp':
+                    $('#target').slideUp('slow');
+                    break;
+                case 'mix':
+                    $('#target').fadeOut('slow').delay(1000).fadeIn('slow')
+                    .delay(1000).slideUp('slow').delay(1000).slideDown()
+                    .delay('slow', function(){alert('끝')});
+                    break;
+                default:
+                    break;
+            }
+        })
+    </script>
+</body>
+</html>

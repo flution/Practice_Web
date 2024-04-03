@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼</title>
+    <style>
+        p {
+            color: blue;
+        }
+        span {
+            color: red;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+    <p>
+        Type 'correct' to validate.
+    </p>
+    <form action="alert('success');">
+        <div>
+            <input type="text">
+            <input type="submit" value="질의 보내기">
+        </div>
+
+    </form>
+    <span></span>
+    <script>
+        $('form').submit(function(){
+            if($('input').val() == 'correct'){
+                $('span').text('Validated...').show();
+                return true;
+            }
+            $('span').text('Invalid...').show().fadeOut(3000);
+            return false;
+        })
+    </script>
+</body>
+</html>

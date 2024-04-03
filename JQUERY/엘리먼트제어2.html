@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>엘리멘트제어2</title>
+    <style>
+        p {
+            background-color: orange;
+            margin: 2px;
+            padding: 2px;
+        }
+        strong {
+            color: cadetblue;
+        }
+        div {
+            border: 2px brown solid;
+            margin: 2px;
+            padding: 2px;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+    <span>
+        Span Text
+    </span>
+    <strong>
+        What about me?
+    </strong>
+    <span>
+        Another One
+    </span>
+    <script>
+        $("span").wrap("<div><div><p><b></b></p></div></div>");
+    </script>
+</body>
+</html>

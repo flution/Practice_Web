@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+    <p>
+        <input type = "text">
+        <span></span>
+    </p>
+    <script>
+        $('input').focus(function(){
+            $(this).next("span").html("focus");
+            //input 태그가 포커스되었을때, focus된 html은 같은 선상(next)에 있는 형제 태그가 있다면
+            //해당 엘리먼트$(this).next("span") = <span></span>를 갖고와라.
+            }).blur(function(){
+                $(this).next("span").html("blur");
+                //input 태그가 blur되었을때, focus를 지우고, 다음 태그도 같이 없애라.
+            }).change(function(e){
+                alert('change' + $(e.target).val())
+            }).select(function(e){
+                $(this).next("span").html("select");
+            })
+            
+    </script>
+</body>
+</html>

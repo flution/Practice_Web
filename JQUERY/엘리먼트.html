@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+    <script>
+        function clickHandler(e){
+            alert("클릭하였습니다.");
+        }
+
+        $(document).ready(function() {
+            $("#clickme").click(clickHandler);
+            $("#remove_evt").click(function(e){
+                console.log(e);
+                $('#clickme').unbind('click', clickHandler);
+            })
+            $('#trigger_evt').click(function(e){
+                $("#clickme").trigger('click');
+            })
+        })
+
+    </script>
+
+
+    <input type ="button" value="clickme" id="clickme">
+    <input type ="button" value="unbind" id="remove_evt">
+    <input type ="button" value="trigger" id="trigger_evt">
+</body>
+</html>
