@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+    <img id = "cloaking" src ="img/클로킹.png" alt="클로킹 버튼" />
+    <img id = "wraith" src="img/레이스.png" alt ="레이스 버튼"/>
+
+    <script>
+        $('#cloaking').click(function(){
+            $('#wraith').toggle().fadeOut(3000);
+            opacity : 0.5
+            }, 3000);
+    </script>
+</body>
+</html>
