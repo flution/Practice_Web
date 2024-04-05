@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>색설정</title>
+</head>
+<body>
+    <canvas id = "mycanvas" width="600" height="600" style="border: 3px solid black;">
+
+    </canvas>
+    <script>
+        var canvas = document.getElementById("mycanvas");
+        var mycontext = canvas.getContext("2d");
+        
+        var gradient = mycontext.createLinearGradient(0, 0, 100, 0);
+        gradient.addColorStop(0, "white");
+        gradient.addColorStop(1, "blue");
+        mycontext.fillStyle = gradient;
+        mycontext.fillRect(10, 10, 100, 100);
+
+        gradient = mycontext.createLinearGradient(100, 0, 250, 100);
+        gradient.addColorStop(0, "white");
+        gradient.addColorStop(1, "red");
+        mycontext.fillStyle = gradient;
+        mycontext.fillRect(150, 10, 100, 100);
+</script>
+</body>
+</html>

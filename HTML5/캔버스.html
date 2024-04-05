@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>캔버스</title>
+</head>
+<body>
+    <canvas id = "mycanvas" width="600" height="600" style="border: 3px solid black;">
+
+    </canvas>
+    <script>
+        var canvas = document.getElementById("mycanvas");
+        var mycontext = canvas.getContext("2d");
+        //버퍼가 2개, 화면 메모리와 화면과 동일한 메모리
+        //둘 다 쌍둥인데 포인터인가? 
+
+        //함수명.명사+rect(1,2,3,4사분면) 이렇게 만드는 것.
+        mycontext.strokeRect(10, 10, 150, 150);
+        //(1,2,3,4) 사분면을 기준으로 떼내라. css grid flex 처럼 0.0 좌표계에서 떼내는 경우.
+        mycontext.fillRect(250, 10, 150, 150);
+        mycontext.fillRect(10, 170, 150, 150);
+        mycontext.clearRect(270, 20, 100, 50);
+    </script>
+</body>
+</html>

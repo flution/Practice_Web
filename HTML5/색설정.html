@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>색설정</title>
+</head>
+<body>
+    <canvas id = "mycanvas" width="600" height="600" style="border: 3px solid black;">
+
+    </canvas>
+    <script>
+        var canvas = document.getElementById("mycanvas");
+        var mycontext = canvas.getContext("2d");
+        
+        //사각형선만 그림
+        mycontext.beginPath();
+        mycontext.strokeStyle= "rgb(0, 80, 0)";
+        mycontext.strokeRect(10, 10, 100, 100);
+
+        //사각형 내부 파란색으로 채우기
+        mycontext.fillStyle = "blue";
+        mycontext.fillRect(150, 10, 100, 100);
+
+        //삼각형 내부 빨간색으로 채움
+        mycontext.fillStyle = "red";
+        mycontext.moveTo(80, 120);
+        mycontext.lineTo(20, 240);
+        mycontext.lineTo(140, 240);
+        mycontext.closePath(); //삼각형의 경우 path로 만들어졌기 때문에 닫아줘야 한다.
+        mycontext.fill();
+
+        //원 내부 색채움
+        mycontext.beginPath(); //그리고 다시 패스 그리기 오픈.
+        mycontext.arc(200, 200, 50, 0, 2*Math.PI);
+        mycontext.fillStyle = "green";
+        mycontext.fill();
+
+</script>
+</body>
+</html>
