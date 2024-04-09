@@ -4,8 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>오디오</title>
+
 </head>
 <body>
-    <audio src="Sleep Away.mp3" type="audio/mp3" controls="controls" loop="loop"></audio>
+    <!-- <audio src="Sleep Away.mp3" type="audio/mp3" controls="controls" loop="loop"></audio> -->
+
+    <audio src="Sleep Away.mp3" type="audio/mp3" id="music"></audio>
+    <button onclick="musicPlay()">시작</button>
+    <button onclick="musicPause()">일시정지</button>
+    <br>
+    <div id="time"></div>
+    <script>
+        var music = document.getElementById("music");
+        var time = document.getElementById("time");
+
+        music.addEventListener("timeupdate", function(){
+            document.getElementById("time").innerHTML =
+            math.floor(music.currentTime) + "/" + math.floor(music.duration); + "초"
+        });
+
+        function musicPlay(){
+            music.play();
+        }
+
+        function musicPause(){
+            music.pause();
+        }
+    </script>
 </body>
 </html>
