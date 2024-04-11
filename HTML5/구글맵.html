@@ -3,14 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>나의 현재 위치</title>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"> </script>
+    <title>카카오 지도</title>
+    <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=56091d76c70eecf07ff0ec067cb32a3e"></script>
 </head>
 <body>
     <script>
-        var markerIcon = new google.maps.MarkerImage(
-            "마커1.jpg"
-        )
         function MyPosition(){
             if(navigator.geolocation){
                 navigator.geolocation.getCurrentPosition(CurrrentPosition, ErrorCallBack);
@@ -21,21 +18,30 @@
             var lng = position.coords.longitude; //경도
             document.getElementById("result").innerHTML = "위도 : " + lat + "<br>경도 : " + lng;
 
-            var latlng = new google.maps.LatLng(lat, lng);
-            var options = {
-                zoom : 15,
-                center : latlng,
-                mapTypeId : google.maps.MapTypeId.ROADMAP
-            }
+            //구글맵을 사용할때의 예시임.
+            // var latlng = new kakao.maps.LatLng(lat, lng);
+            // var options = {
+            //     zoom : 15,
+            //     center : latlng,
+            //     mapTypeId : kakao.maps.MapTypeId.ROADMAP
+            // }
 
-            var map = new google.maps.Map(document.getElementById("map"), options);
-            //구글 맵을 출력하는 객체를 생성해서 map 인자에 박아 넣겠다. 옵션 추가!
-            var marker = new google.maps.Marker({
-                position : latlng,
-                map : map,
-                icon : markerIcon,
-                title : "현재 위치"
-            });
+            // var map = new kakao.maps.Map(document.getElementById("map"), options);
+            // //구글 맵을 출력하는 객체를 생성해서 map 인자에 박아 넣겠다. 옵션 추가!
+            // var marker = new kakao.maps.Marker({
+            //     position : latlng,
+            //     map : map,
+            //     icon : markerIcon,
+            //     title : "현재 위치"
+            // });
+            
+            const container = document.getElementById("map"); //지도를 담을 영역의 DOM 레퍼런스.
+            let options = { //지도를 생성할때 필요한 기본 원리
+                center : new kakao.maps.LatLng(lat, lng), //지도의 중심 좌표
+                level : 3 // 지도의 레벨(확대, 축소의 정도)
+            };
+            let map = new kakao.maps.Map(container, options); //지도의 생성 및 객체 리턴
+
         }
 
         function ErrorCallBack(error){
@@ -51,6 +57,8 @@
                     break;
             }
         }
+
+
     </script>
     <button onclick="MyPosition()">나의 현재 위치 확인</button><p></p>
     <div id = "result"></div>

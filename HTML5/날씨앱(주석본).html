@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>현재 날씨 정보</title>
+</head>
+<body>
+    <h1>현재 날씨 정보</h1>
+    <p id = "weather"></p>
+
+    <script>
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    var lat = position.coords.latitude;
+                    var lng = position.coords.longitude;
+
+                    var apikey = "dbd7a97a91c0ac08a69d01e9a6845086";
+                    var apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&units=metric&appid=${apiKey}`;
+                    // var apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat` + latitude + '&lon=' + longitude + `&units=metric&appid=${apiKey}`;
+                    // 변수로 쓰는 방법입니다. 
+                    
+                    fetch(apiUrl) //fetch = request 랑 다를바 없다.
+                    .then(response => response.json()) //성공했다면 then으로 넘어와서 res를 받아서 
+                    //원래는 .then(function(response){
+                    //     return response.json();
+                    //})
+
+                    // 화살표 함수는 => 를 통해 function을 지우고, 중괄호/return을 없앤 후에 남은 부분만 남긴다.
+                    // ex) .then(function(response){return response.json();}) => .then(response => response.json()).
+            
+                    .then(data => {
+                        console.log(data);
+
+                        var weatherDescription = data.weather[0].description;
+                    })
+                    })
+                    // .then(function(data){
+                    //     var weather = data.weather[0].main;
+                    //     document.getElementById("weather").innerHTML = weather;
+                    // })
+
+                    document.getElementById("weather").innerHTML = "위도 : " + lat + "<br>경도 : " + lng;
+                }
+                
+            ;}
+            
+        
+
+
+    </script>
+</body>
+</html>
