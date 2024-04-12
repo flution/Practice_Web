@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>외부 파일 이미지 드래그 앤 드롭</title>
+    <style>
+        #droparea {
+            width: 1920px;
+            height: 1080px;
+            border: 5px solid red;
+            margin-top : 30px;
+        }
+    </style>
+</head>
+<body>
+    <h2>이미지 요소 드래그 앤 드롭</h2>
+    <div id = "droparea" ondrop = "drop(event)" ondragenter="dragenter(event)" ondragover="dragover(event)"></div>
+
+    <script>
+        var droparea = document.getElementById("droparea");
+        var dropImage = document.createElement("img");
+
+        function drop(e) {
+            var file = e.dataTransfer.files[0];
+            var reader = new FileReader(); //외부 파일의 경우 얘가 핵심임.
+
+            reader.onload = (function(theFile) { 
+                //이벤트 처리기와 이벤트는 항상 같이 움직이므로, 이벤트 처리기가 있다면 함수도 있어야한다.
+                return function(e) {
+                    console.log(e);
+                    alert("ondrop");
+                    dropImage.src = e.target.result; //이미지를 움직이므로 또는 그룹이 될 수 있어야 할 수 있습니다.
+                    droparea.appendChild(dropImage); //이미지를 또는 그룹에 추가하는 것입니다.
+                }
+            })(file);
+
+            reader.readAsDataURL(file);
+
+            e.stopPropagation() 
+            // 이벤트 버블링을 막아주는 것. // 이벤트 버블링? 하위 개체에서 바뀌면 상위 개체도 다 바뀌게 되는것(렌더링)
+            e.preventDefault();
+        }
+        function dragenter(e) {
+            e.preventDefault();
+        }
+        function dragover(e) {
+            e.preventDefault();
+        }
+    </script>
+</body>
+</html>
