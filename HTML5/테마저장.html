@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테마 저장</title>
+    <style>
+        body.light {
+            background-color: aliceblue;
+            color: black;
+        }
+
+        body.dark {
+            background-color: black;
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>테마 스위치</h1>
+    <input type ='radio' name='theme' value="light" checked>Light
+    <input type ='radio' name='theme' value="dark">Dark
+
+    <script>
+        const themeRadios = document.querySelectorAll("input[name='theme']"); //이거 ByName 써도 되지 않나?
+        //원래는 이터레이터를 통한 반복자로 해결했다. C++에선. 그러나 자바스크립트는 다르다!
+        //정수형,문자열,배열같은 표준(원시타입)타입은 가능하지만 여기선 부가능한데? radio인데?
+        //forEach는 object 형태도 가능한 함수. radio를 받아서 object를 강제로 배열화한다.
+        //forEach를 쓸때 E를 꼭 대문자로 쓰도록
+
+        const savedTheme = localStorage.getItem('selectedTheme');
+
+
+        if(savedTheme){ //테마가 세이브 테마일때
+            console.log(savedTheme)
+            const selectedRadio = document.querySelector(`input[value="${savedTheme}"]`)
+            //도큐먼트의 쿼리 세렑터에서(인풋이 밸류값이 세이브테마일때) 체크가 트루냐?
+            selectedRadio.checked = true;
+            //체크값이 트루라면
+            document.body.classList.add('light', 'dark');
+            //바디 클래스리스트에 순서대로 add 해라.
+        }
+        
+
+        themeRadios.forEach(radio => {
+            radio.addEventListener('change', () => {
+                const selectedTheme = radio.value;
+                //radio의 밸류값을 selectedTheme에 저장하고
+                document.body.classList.remove('light', 'dark');
+                //도큐먼트-바디-클래스리스트중-삭제하겠다-인자는 라이트/다크를 싹다 비우고 초기화 한다..
+                document.body.classList.add(selectedTheme);
+                //바디-클래스리스트에 지정된 테마를 추가하라.
+
+                localStorage.setItem('selectedTheme', selectedTheme);
+            })
+        })
+        
+    </script>
+</body>
+</html>
