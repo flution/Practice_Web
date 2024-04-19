@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>데이터 시각화</title>
+</head>
+<body>
+    <h1>실시간 데이터 시각화</h1>
+
+    <canvas id = 'chartcanvas' width = '600' height="400"></canvas>
+    
+    <script>
+        var chartcanvas = document.getElementById('chartcanvas');
+        var chartContext = chartcanvas.getContext('2d');
+
+        var chartworker = new Worker('chartworker.js');
+
+        function SendData(){
+            //var dataPoint = {x : Math.random() * chartcanvas.width, y : Math.random() * chartcanvas.height};
+            var dataPoint = {x : chartcanvas.width, y : chartcanvas.height};
+            chartworker.postMessage(dataPoint);
+        }
+
+        chartworker.onmessage = function(event){
+            var dataPoint = event.data;
+            console.log(dataPoint.x, dataPoint.y);
+        }
+
+        setInterval(SendData, 1000);
+
+    </script>
+
+</body>
+</html>

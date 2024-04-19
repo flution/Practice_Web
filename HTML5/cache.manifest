@@ -1,0 +1,10 @@
+CACHE MANIFEST
+#version 1.0.0.0
+
+CACHE :
+offweb.html
+style.css
+API.jpg
+
+NETWORK : *
+FALLBACK :
